@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <center>
+    <form action="/do-post",  method="POST" enctype="multipart/form-data" >
+      
+        <div class="container">
+          <label><b>Title</b></label>
+          <input type="text" placeholder="Enter Username" name="title" > <br>
+      
+          <label ><b>Content</b></label>
+          <input type="text" name="content" placeholder="Enter post"  > <br>
+          <label for="image">Upload Image</label>
+                <input type="file" id="image"
+                       name="image" value="" required>
+                       <br>
+          <button type="submit">Post</button>
+        </div>
+      </form>
+
+<script>
+    //onsubmit="return doPost(this);"
+function doPost(form){
+    $.ajax({
+        url:'/do-post',
+        method:"POST",
+        contentType: 'application/json',
+        data:{title: form.title.value, content: form.content.value},
+        success: function (response){
+            alert (response);
+        }
+    });
+    return false
+}
+</script>
+</body>
+</html>

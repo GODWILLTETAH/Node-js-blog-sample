@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+    padding: 2px 16px;
+}
+    </style>
+</head>
+<body>
+    <center>
+        <div class="card"> 
+            <img src="/uploads/<%=post.image%>" alt="Avatar" style="width:100%">
+            <div class="container">
+              <h4><b><%=post.title%></b></h4>
+              <p><%=post.content%></p> <br>
+              <p> <img src="/uploads/<%=post.image%>"> </p>
+            </div>
+          </div> <br>
+          <img src="<%=post.image%>" alt="Avatar" style="width:100%">
+
+    </center>
+</body>
+</html>

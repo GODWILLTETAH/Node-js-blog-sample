@@ -1,0 +1,55 @@
+<html>
+<head>
+<style>
+.container {
+  border: 2px solid #ccc;
+  background-color: #eee;
+  border-radius: 5px;
+  padding: 16px;
+  margin: 16px 0
+}
+
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.container img {
+  float: left;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.container span {
+  font-size: 20px;
+  margin-right: 15px;
+}
+
+@media (max-width: 500px) {
+  .container {
+      text-align: center;
+  }
+  .container img {
+      margin: auto;
+      float: none;
+      display: block;
+  }
+}
+</style>
+</head>
+<body>
+
+<h2>Responsive Testimonials</h2>
+<p>Resize the browser window to see the effect.</p>
+<% post.forEach(function(post){%> 
+    <div class="container">
+      <p><img src="<%=post.image%>"></p> <br>
+  <p><%=post.title%></p>
+  <p><%=post.content%></p> 
+  <p><a href="posts/<%=post._id%>">read more</a></p> 
+</div>
+<%})%>
+</body>
+
+</html>
